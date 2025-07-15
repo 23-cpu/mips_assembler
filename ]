@@ -1,0 +1,24 @@
+def parser(instruction):
+    removed_commas = ""
+    
+    comments_removed = instruction.split("#",1)
+    del comments_removed[len(comments_removed)-1]
+
+    xs = "".join(comments_removed)
+
+    
+    for letter in xs:
+        if letter == ",":
+            letter.replace(letter, "")
+            continue
+        else:
+            removed_commas = removed_commas+letter
+            striped_format = removed_commas.lstrip()
+            print(striped_format)
+
+
+
+parser("add $t0, $t1, $t2 #hello")
+parser("lw $t0, 4($t1)")
+parser("     sub $s1, $s2 , $s3 ")
+parser("beq $s0, $s1, loop")

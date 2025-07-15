@@ -1,0 +1,18 @@
+def parser(instruction):
+
+    removed_commas = ""
+
+    instruction.rstrip()
+    instruction.lstrip()
+
+    for i in range(len(instruction)):
+        if instruction[i] == ",":
+            intruction[i] = ""
+            continue
+
+
+    return removed_commas
+
+
+
+print(parser("add $t0, $t1, $t2"))
